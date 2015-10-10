@@ -1,0 +1,38 @@
+## Simple Client implemented using sockets - sends a
+## GET request to the server including some user defined
+## text and the server returns the text in all caps.
+## It's then printed to the screen to the user.
+
+## @author Kieran Fraser
+
+require "socket"
+
+#Define the hostname and port number to connect to
+
+hostname = "127.0.0.1"
+port = 8000
+
+#Create a new TCP socket using the hostname and port of the server
+
+socket = TCPSocket.new("127.0.0.1", 8000)
+
+#Get input from the user and format for use within the
+#HTTP request - note the different format for Ruby
+
+input = gets
+input.split.size
+input.gsub! ' ', '+'
+socket.print("GET /echo.php?message="+input+" HTTP/1.0\r\n\r\n")
+
+#Read the response from the server, remove the lines user not interested in
+#and print the all caps text
+
+while line = socket.gets
+  if line.include? '\n'
+    serverSays = line.chomp('\n')
+    puts "Server says: " + serverSays
+  end
+end
+
+#Close the socket and finish
+socket.close

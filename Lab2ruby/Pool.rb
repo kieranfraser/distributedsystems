@@ -1,3 +1,6 @@
+# This class is an implementation of a thread pool.
+# Sourced from http://www.burgestrand.se/code/ruby-thread-pool/
+
 class Pool
 
   def initialize(size)

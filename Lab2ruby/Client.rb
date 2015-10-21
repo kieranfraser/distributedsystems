@@ -32,7 +32,7 @@ puts 'Connected to server'
 #   end
 # end
 
-socket.print("this is another message\n")
+socket.print("HELO this is another message\n")
 puts 'writing to socket'
 
 #ruby Client.rb 2000

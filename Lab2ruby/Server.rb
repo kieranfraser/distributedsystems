@@ -22,6 +22,7 @@ hostname = '127.0.0.1'
 port = ARGV[0]
 ipAddress = Socket.getaddrinfo(Socket.gethostname,"echo",Socket::AF_INET)[0][3]
 THREAD_NUMBER = 10
+STUDENT_NUMBER = "39f20a6b16fedf8e18d0ac5b965ef175bb06b53317538707ffd281a5ac93c0bb"
 
 # Initialize the server and bind to user defined port
 
@@ -47,14 +48,13 @@ loop do
 
   p.schedule do |i|
     puts "Thread #{i} started #{Thread.current[:id]}"
-    sleep(10)
     line = client.gets
     puts line
     if line.include? "KILL_SERVICE"
       abort("Killing service...")
     else
       if line.include? "HELO "
-        client.print(line+"IP:"+ipAddress+"\n"+"Port:"+port+"\n")
+        client.print(line+"IP:"+ipAddress+"\n"+"Port:"+port+"\n"+"Student No:"+STUDENT_NUMBER+"\n")
       else
         processOtherMessage(line)
       end

@@ -18,7 +18,14 @@ require_relative 'Pool'
 # thread pool. This value can be changed depending on how many
 # working threads the user wants to create.
 
-hostname = '127.0.0.1'
+#This IP address was used as in order to connect to the test server
+#it was necessary to SSH to Macneill and run this server from that
+#machine. I used putty to ssh to the machine and run the program.
+# echo $SSH_CONNECTION will give the local computer and Macneill
+#machine's IP address and port numbers.
+#I used FileZilla to transfer my server to the Macneill machine.
+
+hostname = '134.226.32.10'
 port = ARGV[0]
 ipAddress = Socket.getaddrinfo(Socket.gethostname,"echo",Socket::AF_INET)[0][3]
 THREAD_NUMBER = 10
@@ -54,7 +61,7 @@ loop do
       abort("Killing service...")
     else
       if line.include? "HELO "
-        client.print(line+"IP:"+ipAddress+"\n"+"Port:"+port+"\n"+"Student No:"+STUDENT_NUMBER+"\n")
+        client.print(line+"IP:"+ipAddress+"\n"+"Port:"+port+"\n"+"StudentID:"+STUDENT_NUMBER+"\n")
       else
         processOtherMessage(line)
       end
@@ -67,5 +74,5 @@ end
 # Function for 'other' messages.. simply prints to the terminal
 
 def processOtherMessage(line)
-  puts "this -> "+line
+  #nothing to do with this message
 end

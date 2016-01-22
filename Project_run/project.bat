@@ -6,3 +6,5 @@ start java -jar LockService.jar
 
 start java -jar DirectoryService.jar
 
+start java -jar SecurityService.jar
+

@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 
 public interface ClientFileProxy {
 
-	public void read(String fileName) throws UnknownHostException, IOException, InterruptedException;
+	public void read(String fileName, String username, String password) throws UnknownHostException, IOException, InterruptedException;
 	
-	public void write(String fileName) throws IOException, URISyntaxException;
+	public void write(String fileName, String username, String password) throws IOException, URISyntaxException;
 	
 }

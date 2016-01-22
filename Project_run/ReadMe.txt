@@ -8,6 +8,12 @@ Directory Server
 
 Lock Server
 
+Security (implemented Kerberos security protocol for communications between 
+the directory service and the client. If have more time will expand to all services.)
+
+Note: Kerberos authentication implemented as theorized here (because I'm 5!) -> 
+http://www.roguelynn.com/words/explain-like-im-5-kerberos/
+
 ---------------------------------
 
 In order to run:

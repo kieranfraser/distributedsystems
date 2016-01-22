@@ -1,3 +1,5 @@
+NB NOTE: This works in eclipse, but for some reason won't run as a .jar. I will debug in the coming days if I have time!
+
 The project currently has the following components:
 
 Client side proxy (Transparent)

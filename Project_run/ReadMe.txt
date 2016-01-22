@@ -20,21 +20,28 @@ In order to run:
 
 1. double click project.bat
 
-2. a window will appear asking for you to read or write. 
-   Important Note: you must execute a write before you execute a read
+2. a window will appear asking for you to enter a username: it must be greater than 10 chars. Then press enter.
+
+3. you will then be asked for a password. This must be greater than 6 chars. This is important as the clients encryption is based
+   on the username/password identity.
+
+4. next you must choose an operation: either read or write. Must write first however as there will be nothing in the
+   directory to begin with. (will rectify this restriction if I get the time).
+
+5. Important Note: you must execute a write before you execute a read
    (as there is nothing yet stored to read on the server)
    I hope to add persistence in the coming days via a db.
 
-3. In order to write, type 'w' or 'write' and press enter.
+6. In order to write, type 'w' or 'write' and press enter.
 
-4. You will now be asked for the file. The file to write MUST be in the same
+7. You will now be asked for the file. The file to write MUST be in the same
    directory as the .jar and .bat files. If this is so, simply type the file name and extension
    e.g. test.txt
    Then hit enter.
+   
+8. The file should now be saved on the file server and the name should be in the directory server.
 
-5. The file should now be saved on the file server and the name should be in the directory server.
-
-6. To read the file again, enter 'r' or 'read' when prompted to do so. Press enter. Then enter the 
+9. To read the file again, enter 'r' or 'read' when prompted to do so. Press enter. Then enter the 
    file name as before. Press enter. (note: when reading files, there doesn't have to be a file with
    the same name in the current directory. i.e. you can save the file as a different file name if you so
    wish).
